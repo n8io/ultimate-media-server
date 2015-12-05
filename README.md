@@ -5,6 +5,7 @@ A collection of services that stands up all your media automation needs with doc
 * [Sabnzbd](http://sabnzbd.org)
 * [Sickbeard](http://sickbeard.com)
 * [CouchPotato](https://couchpota.to)
+* [Plex Media Server (plexpass)](https://plex.tv)
 
 ## How easy it?
 
@@ -35,4 +36,5 @@ Once the install finishes your browser will automatically open up the following 
 * [http://ultimate.media.server:8081](http://ultimate.media.server:8081) // Sickbeard
 * [http://ultimate.media.server:5050](http://ultimate.media.server:5050) // CouchPotato
 * [http://ultimate.media.server:5050](http://ultimate.media.server:5051) // CouchPotato (for prereleases)
+* [http://ultimate.media.server:32400/web](http://ultimate.media.server:32400/web) // Plex Media Server
 
