@@ -1,0 +1,33 @@
+{
+  "name": "ultimate-media-server",
+  "version": "1.0.0",
+  "description": "A docker collection of services needed to make the best automated media server in existence with the least amount of effort.",
+  "main": "app.js",
+  "scripts": {
+    "clean": "rm -rf node_modules/ npm-debug.log && npm run docker:reset",
+    "docker": "npm run docker:build && npm run docker:stop && npm run docker:start",
+    "docker:build": "node ./build/docker/build",
+    "docker:reset": "npm run docker:stop && docker-compose rm -f",
+    "docker:start": "docker-compose up -d",
+    "docker:stop": "docker-compose stop",
+    "hosts": "sudo hostile set $(docker-machine ip default) ultimate.media.server",
+    "open": "npm run hosts && node open",
+    "test": "echo 'No tests specified' && exit 0"
+  },
+  "keywords": [
+    "Docker",
+    "Plex",
+    "Sickebeard",
+    "Couchpotato",
+    "Sabnzbd"
+  ],
+  "author": "Nate Clark",
+  "license": "MIT",
+  "devDependencies": {
+    "chalk": "^1.1.1",
+    "hostile": "^1.0.2",
+    "json2yaml": "^1.0.3",
+    "open": "0.0.5",
+    "shelljs": "^0.5.3"
+  }
+}

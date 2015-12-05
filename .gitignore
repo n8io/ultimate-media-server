@@ -5,18 +5,7 @@ docker-compose.yml
 node_modules
 
 # configs
-configs/couchpotato/prerelease/**
-configs/couchpotato/release/**
-configs/sabnzbd/**
-configs/sickbeard/**
-configs/plex/**/Logs
-configs/plex/**/*.log.*
-!configs/couchpotato/prerelease/CouchPotato.cfg
-!configs/couchpotato/release/CouchPotato.cfg
-!configs/sabnzbd/sabnzbd.ini
-!configs/sickbeard/config.ini
-!configs/plex/**/*com.plexapp*
-.env*
+configs
 
 # misc
 *.log

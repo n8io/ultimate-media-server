@@ -1,0 +1,109 @@
+{
+  "shares": {
+    "image": "tianon/true",
+    "volumes": [
+      "./media:/media",
+      "./configs:/configs",
+      "./temp:/temp"
+    ]
+  },
+  "sabnzbd": {
+    "image": "timhaak/sabnzbd",
+    "volumes_from": [
+      "shares"
+    ],
+    "volumes": [
+      "./configs/sabnzbd:/config",
+      "./temp/incomplete:/incomplete",
+      "./temp/tv:/tv",
+      "./temp/movies/release:/movies/release",
+      "./temp/movies/prerelease:/movies/prerelease"
+    ],
+    "ports": [
+      "8080:8080",
+      "9090:9090"
+    ],
+    "extra_hosts": [
+      "0.0.0.0:localhost",
+      "192.168.99.100:ultimate.media.server"
+    ],
+    "restart": "always"
+  },
+  "sickbeard": {
+    "image": "timhaak/sickbeard",
+    "volumes_from": [
+      "shares"
+    ],
+    "volumes": [
+      "./configs/sickbeard:/config",
+      "./media/tv:/data",
+      "./temp/tv:/completed"
+    ],
+    "ports": [
+      "8081:8081"
+    ],
+    "extra_hosts": [
+      "0.0.0.0:localhost",
+      "192.168.99.100:ultimate.media.server"
+    ],
+    "restart": "always"
+  },
+  "couchpotato": {
+    "image": "timhaak/couchpotato",
+    "volumes_from": [
+      "shares"
+    ],
+    "volumes": [
+      "./configs/couchpotato/release:/config",
+      "./configs/couchpotato/release/data:/data",
+      "./temp/movies/release:/completed",
+      "./media/movies/release:/movies"
+    ],
+    "ports": [
+      "5050:5050"
+    ],
+    "extra_hosts": [
+      "0.0.0.0:localhost",
+      "192.168.99.100:ultimate.media.server"
+    ],
+    "restart": "always"
+  },
+  "couchpotatoprerelease": {
+    "image": "timhaak/couchpotato",
+    "volumes_from": [
+      "shares"
+    ],
+    "volumes": [
+      "./configs/couchpotato/prerelease:/config",
+      "./configs/couchpotato/prerelease/data:/data",
+      "./temp/movies/prerelease:/completed",
+      "./media/movies/prerelease:/movies"
+    ],
+    "ports": [
+      "5051:5051"
+    ],
+    "extra_hosts": [
+      "0.0.0.0:localhost",
+      "192.168.99.100:ultimate.media.server"
+    ],
+    "restart": "always"
+  },
+  "plex": {
+    "image": "jiigsaaw/plex-pass-media-server",
+    "volumes_from": [
+      "shares"
+    ],
+    "volumes": [
+      "./media:/media",
+      "./temp/plex:/tmp"
+    ],
+    "expose": [
+      "32400"
+    ],
+    "ports": [
+      "32400:32400"
+    ],
+    "restart": "always",
+    "net": "host"
+  }
+}
