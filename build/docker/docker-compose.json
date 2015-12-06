@@ -80,7 +80,7 @@
       "./media/movies/prerelease:/movies"
     ],
     "ports": [
-      "5051:5051"
+      "5051:5050"
     ],
     "extra_hosts": [
       "0.0.0.0:localhost",
