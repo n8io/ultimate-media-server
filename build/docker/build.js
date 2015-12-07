@@ -11,11 +11,10 @@ var projRoot = process.env.PWD;
 var cfgPath = path.join(projRoot, 'build/docker/docker-compose.json');
 var dcPath = path.join(projRoot, 'docker-compose.yml');
 
-console.log('Loading ' + cfgPath + ' ...');
+console.log('Loading docker-compose.json...');
 var fileContents = fs.readFileSync(cfgPath, 'utf-8').toString();
 
-console.log('...loaded');
-console.log('Parsing contents ...');
+console.log('Parsing contents...');
 var dcObj = JSON.parse(fileContents);
 
 if (os.platform() === 'linux') {
@@ -31,9 +30,9 @@ if (os.platform() === 'linux') {
   shell.exec('chown 797:797 -R ' + transcodeConfigDir); // Set it's ownership to the internal Docker containter's "plex" user
 }
 
-console.log('Converting to yaml ...');
+console.log('Converting to yaml...');
 var yamlStr = y2j.stringify(dcObj);
 
-console.log('Writing to ' + dcPath + ' ...');
+console.log('Writing to ' + dcPath + '...');
 fs.writeFileSync(dcPath, yamlStr);
 console.log(chalk.green('Successfully generated docker-compose.yml'));
