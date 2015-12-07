@@ -2,7 +2,7 @@
   "shares": {
     "image": "tianon/true",
     "volumes": [
-      "./media:/media",
+      "./media:/media:ro",
       "./configs:/configs",
       "./temp:/temp"
     ]
@@ -94,11 +94,7 @@
       "shares"
     ],
     "volumes": [
-      "./media:/media",
       "./temp/plex:/tmp"
-    ],
-    "expose": [
-      "32400"
     ],
     "ports": [
       "32400:32400"
