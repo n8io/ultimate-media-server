@@ -4,7 +4,8 @@
   "description": "A docker collection of services needed to make the best automated media server in existence with the least amount of effort.",
   "main": "app.js",
   "scripts": {
-    "clean": "rm -rf node_modules/ npm-debug.log && npm run docker:reset && rm -rf docker-compose.yml configs/",
+    "clean": "rm -rf node_modules/ && npm run clean:dusting",
+    "clean:dusting": "npm run docker:reset && rm -rf configs/ temp/plex/ temp/transmission/ docker-compose.yml npm-debug.log",
     "docker": "npm run docker:build && npm run docker:stop && npm run docker:start",
     "docker:build": "node ./build/docker/build",
     "docker:remove": "docker-compose rm -f",
@@ -28,6 +29,7 @@
   "dependencies": {
     "chalk": "^1.1.1",
     "json2yaml": "^1.0.3",
+    "nginxer": "^0.1.8",
     "shelljs": "^0.5.3"
   },
   "devDependencies": {

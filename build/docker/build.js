@@ -11,15 +11,28 @@ var projRoot = process.env.PWD;
 var cfgPath = path.join(projRoot, 'build/docker/docker-compose.json');
 var dcPath = path.join(projRoot, 'docker-compose.yml');
 
+var regDA = /(:[\d]+)|(tcp:\/\/)/ig;
+var umsName = 'ultimate.media.server';
+var dockerAddress = (process.env.DOCKER_HOST || '').replace(regDA, '') || umsName;
+
+var fileContents;
+var dcObj;
+var plexConfigDir;
+var transcodeConfigDir;
+var pia = {
+	user: process.env.PIA_USER || '',
+	password: process.env.PIA_PASS || ''
+};
+
 console.log('Loading docker-compose.json...');
-var fileContents = fs.readFileSync(cfgPath, 'utf-8').toString();
+fileContents = fs.readFileSync(cfgPath, 'utf-8').toString();
 
 console.log('Parsing contents...');
-var dcObj = JSON.parse(fileContents);
+dcObj = JSON.parse(fileContents);
 
 if (os.platform() === 'linux') {
-  var plexConfigDir = path.join(projRoot, 'configs/plex');
-  var transcodeConfigDir = path.join(projRoot, 'temp/plex');
+  plexConfigDir = path.join(projRoot, 'configs/plex');
+  transcodeConfigDir = path.join(projRoot, 'temp/plex');
 
   dcObj.plex.volumes.push('./configs/plex:/config');
 
@@ -28,6 +41,19 @@ if (os.platform() === 'linux') {
 
   shell.mkdir('-p', transcodeConfigDir); // Create temp if it doesn't exist
   shell.exec('chown 797:797 -R ' + transcodeConfigDir); // Set it's ownership to the internal Docker containter's "plex" user
+}
+
+console.log('Adding extra_hosts for ums dns name...');
+dcObj.sabnzbd['extra_hosts'].push(dockerAddress + ':' + umsName);
+dcObj.sickbeard['extra_hosts'].push(dockerAddress + ':' + umsName);
+dcObj.couchpotato['extra_hosts'].push(dockerAddress + ':' + umsName);
+dcObj.couchpotatoprerelease['extra_hosts'].push(dockerAddress + ':' + umsName);
+dcObj.transmission['extra_hosts'].push(dockerAddress + ':' + umsName);
+dcObj.nginx['extra_hosts'].push(dockerAddress + ':transmission');
+
+if (!pia.user && !pia.password) {
+  delete dcObj.transmission;
+  delete dcObj.nginx;
 }
 
 console.log('Converting to yaml...');

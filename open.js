@@ -1,11 +1,15 @@
 var open = require('open');
+var reg = /(:[\d]+)|(tcp:\/\/)/ig;
+var address = (process.env.DOCKER_HOST || '').replace(reg, '') || 'ultimate.media.server';
 
-var basePath = 'http://ultimate.media.server';
+
+var basePath = 'http://' + address;
 var appPaths = [
   ':8080',
   ':8081',
   ':5050',
   ':5051',
+  ':8091',
   ':32400/web'
 ];
 

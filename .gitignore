@@ -1,6 +1,9 @@
 # Docker
 docker-compose.yml
 
+# temp
+temp/plex/**
+
 # nodejs
 node_modules
 
