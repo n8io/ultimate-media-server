@@ -18,6 +18,7 @@ A collection of services that stands up all your media automation needs with doc
 
 ### To setup
 * `npm install`
+* `npm run hosts`
 
 ### To start (the first time)
 * `npm run docker`
@@ -32,14 +33,14 @@ A collection of services that stands up all your media automation needs with doc
 ### Want Transmission?
 
 * You need a valid [PrivateInternetAccess](https://privateinternetaccess.com) creds then...
-* `npm run docker PIA_USER=username PIA_PASS=password`
+* `PIA_USER=username PIA_PASS=password npm run docker`
 
 Once the install finishes your browser will automatically open up the following pages:
 
 * [http://ultimate.media.server:8080](http://ultimate.media.server:8080) // Sabnzbd
 * [http://ultimate.media.server:8081](http://ultimate.media.server:8081) // Sickbeard
 * [http://ultimate.media.server:5050](http://ultimate.media.server:5050) // CouchPotato
-* [http://ultimate.media.server:5050](http://ultimate.media.server:5051) // CouchPotato (for prereleases)
+* [http://ultimate.media.server:5051](http://ultimate.media.server:5051) // CouchPotato (for prereleases)
 * [http://ultimate.media.server:32400/web](http://ultimate.media.server:32400/web) // Plex Media Server
 * [http://ultimate.media.server:8091](http://ultimate.media.server:8091) // Transmission
 
