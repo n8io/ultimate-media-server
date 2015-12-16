@@ -47,7 +47,7 @@ Once the install finishes your browser will automatically open up the following 
 
 ## Troubleshooting
 
-### I don't see Transmission running?
+### I don't see Transmission running
 
 * You need a valid [PrivateInternetAccess](https://privateinternetaccess.com) creds
   * This is needed to properly protect your IP
