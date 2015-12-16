@@ -13,10 +13,10 @@ A collection of services that stands up all your media automation needs with doc
 ## Getting Started
 
 ### Prequisites
-* All of your media should exist or be moved to `./media`
-  * It is a restriction of docker to be relative to the docker-compose.yml file
+* All of your existing media should be moved to `./media`
+  * It is a restriction of docker to be a sibling to the `docker-compose.yml` file
 * You're on a *nix machine (preferably Ubuntu)
-  * [Install Docker following these steps](https://docs.docker.com/linux/step_one/)com/linux/step_one/)
+  * [Install Docker following these steps](https://docs.docker.com/linux/step_one/)
   * Make sure docker-compose is installed via:
     * `apt-get install docker-compose`
 
