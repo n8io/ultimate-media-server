@@ -37,6 +37,9 @@
       "./configs/sickbeard:/config",
       "./temp/tv:/completed"
     ],
+    "links": [
+      "sabnzbd"
+    ],
     "ports": [
       "8081:8081"
     ],
@@ -56,6 +59,9 @@
       "./temp/movies/release:/completed",
       "./media/movies/release:/movies"
     ],
+    "links": [
+      "sabnzbd"
+    ],
     "ports": [
       "5050:5050"
     ],
@@ -68,6 +74,9 @@
     "image": "timhaak/couchpotato",
     "volumes_from": [
       "shares"
+    ],
+    "links": [
+      "sabnzbd"
     ],
     "volumes": [
       "./configs/couchpotato/prerelease:/config",
@@ -112,7 +121,7 @@
       "TRANSMISSION_SPEED_LIMIT_DOWN_ENABLED=true",
       "TRANSMISSION_SPEED_LIMIT_UP=1",
       "TRANSMISSION_SPEED_LIMIT_UP_ENABLED=true",
-      "TRANSMISSION_DOWNLOAD_DIR=/tv",
+      "TRANSMISSION_DOWNLOAD_DIR=/movies/prerelease",
       "TRANSMISSION_INCOMPLETE_DIR=/incomplete",
       "TRANSMISSION_INCOMPLETE_DIR_ENABLED=true",
       "TRANSMISSION_DOWNLOAD_LIMIT=1000",
