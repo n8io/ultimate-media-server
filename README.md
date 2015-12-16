@@ -13,7 +13,7 @@ A collection of services that stands up all your media automation needs with doc
 ### Prequisites
 * All of your media exists in `./media` (restriction of docker)
 * You're on a *nix machine (preferably Ubuntu)
-  * [Install Docker following these steps](https://docs.docker.com/linux/step_one/) or [these steps](https://docs.docker.com/linux/step_one/)
+  * [Install Docker following these steps](https://docs.docker.com/linux/step_one/)com/linux/step_one/)
   * Make sure docker-compose is installed via:
     * `apt-get install docker-compose`
 
