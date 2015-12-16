@@ -129,7 +129,7 @@
       "0.0.0.0:localhost"
     ],
     "ports": [
-      "80:80"
+      "8099:80"
     ],
     "restart": "always"
   },
