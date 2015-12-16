@@ -31,7 +31,7 @@ A collection of services that stands up all your media automation needs with doc
 
 ### Want Transmission?
 
-* You need a valid PrivateInternetAccess creds then...
+* You need a valid [PrivateInternetAccess](https://privateinternetaccess.com) creds then...
 * `npm run docker PIA_USER=username PIA_PASS=password`
 
 Once the install finishes your browser will automatically open up the following pages:
