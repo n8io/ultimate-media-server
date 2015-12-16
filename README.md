@@ -6,7 +6,7 @@ A collection of services that stands up all your media automation needs with doc
 * [Sickbeard](http://sickbeard.com)
 * [CouchPotato](https://couchpota.to)
 * [Plex Media Server (plexpass)](https://plex.tv)
-* *[Transmission](https://transmissionbt.com)
+* [Transmission](https://transmissionbt.com)
 
 ## How easy it?
 
@@ -30,10 +30,12 @@ A collection of services that stands up all your media automation needs with doc
 ### To stop
 * `npm run docker:stop`
 
-### Want Transmission?
+### I don't see Transmission running?
 
-* You need a valid [PrivateInternetAccess](https://privateinternetaccess.com) creds then...
-* `PIA_USER=username PIA_PASS=password npm run docker`
+* You need a valid [PrivateInternetAccess](https://privateinternetaccess.com) creds 
+  * This is needed to properly protect your IP
+  * Pay for the service or you don't get transmission. Sorry :-(
+* Then run `PIA_USER=username PIA_PASS=password npm run docker`
 
 Once the install finishes your browser will automatically open up the following pages:
 
