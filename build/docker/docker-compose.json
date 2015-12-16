@@ -108,25 +108,6 @@
     "restart": "always",
     "net": "host"
   },
-  "owncloud": {
-    "image": "pschmitt/owncloud",
-    "volumes_from": [
-      "shares"
-    ],
-    "volumes": [
-      "./configs/owncloud/config:/var/www/owncloud/config",
-      "./configs/owncloud/apps:/var/www/owncloud/apps",
-      "./media:/var/www/owncloud/data"
-    ],
-    "environment": [
-      "TIMEZONE=America/New_York"
-    ],
-    "ports": [
-      "80:80"
-    ],
-    "restart": "always",
-    "net": "host"
-  },
   "transmission": {
     "image": "haugene/transmission-openvpn",
     "volumes_from": [
