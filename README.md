@@ -6,6 +6,7 @@ A collection of services that stands up all your media automation needs with doc
 * [Sickbeard](http://sickbeard.com)
 * [CouchPotato](https://couchpota.to)
 * [Plex Media Server (plexpass)](https://plex.tv)
+* *[Transmission](https://transmissionbt.com)
 
 ## How easy it?
 
