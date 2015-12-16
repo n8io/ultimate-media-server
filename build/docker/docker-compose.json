@@ -129,9 +129,10 @@
       "0.0.0.0:localhost"
     ],
     "ports": [
-      "8099:80"
+      "80:80"
     ],
-    "restart": "always"
+    "restart": "always",
+    "net": "host"
   },
   "transmission": {
     "image": "haugene/transmission-openvpn",
