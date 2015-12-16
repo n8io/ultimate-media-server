@@ -2,11 +2,11 @@
 A collection of services that stands up all your media automation needs with docker containers.
 
 ## What's in the box???
-* [Sabnzbd](http://sabnzbd.org)
-* [Sickbeard](http://sickbeard.com)
-* [CouchPotato](https://couchpota.to)
-* [Plex Media Server (plexpass)](https://plex.tv)
-* [Transmission](https://transmissionbt.com)
+* [Sabnzbd](http://sabnzbd.org) (nzb manager)
+* [Sickbeard](http://sickbeard.com) (tv download manager)
+* [CouchPotato](https://couchpota.to) (movie download manager)
+* [Transmission](https://transmissionbt.com) (torrent download manager)
+* [Plex Media Server (plexpass)](https://plex.tv) (media manager)
 
 ## How easy it?
 
