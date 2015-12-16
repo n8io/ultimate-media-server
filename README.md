@@ -13,12 +13,12 @@ A collection of services that stands up all your media automation needs with Doc
 ## Getting Started
 
 ### Prequisites
-* All of your existing media should be moved to `./media`
-  * Only directories underneath the project root can be accessed and shared via Docker.
 * You're on a *nix machine (preferably Ubuntu)
   * [Install Docker following these steps](https://docs.docker.com/linux/step_one/)
   * Make sure docker-compose is installed via:
     * `apt-get install docker-compose`
+* All of your existing media should be moved to `./media`
+  * Only directories underneath the project root can be accessed and shared via Docker.
 
 ### To setup
 * `npm install`
