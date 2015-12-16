@@ -20,15 +20,14 @@ A collection of services that stands up all your media automation needs with doc
 * `npm install`
 * `npm run hosts`
 
-### To start (the first time)
+### To start
 * `npm run docker`
-* *** NOTE *** this will take a few minutes depending on your broadband speed on inital startup. Starts instantly thereafter.
+* *** PLEASE NOTE *** 
+  * This will take a few minutes depending on your broadband speed on inital startup. 
+  * Starts almost instantly thereafter.
 
 ### To stop
 * `npm run docker:stop`
-
-### To start again
-* `npm run docker:start`
 
 ### Want Transmission?
 
