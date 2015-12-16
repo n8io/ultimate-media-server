@@ -45,4 +45,3 @@ Once the install finishes your browser will automatically open up the following 
 
 ... OR if you are lazy
 * `npm run open`
-* *** NOTE *** wait a few seconds after `npm run docker` completes successfully
