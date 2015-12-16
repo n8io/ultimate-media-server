@@ -2,7 +2,7 @@
 docker-compose.yml
 
 # temp
-temp/plex
+temp
 
 # media
 media
