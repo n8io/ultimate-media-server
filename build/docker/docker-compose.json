@@ -121,9 +121,6 @@
     "environment": [
       "TIMEZONE=America/New_York"
     ],
-    "extra_hosts": [
-      "0.0.0.0:localhost"
-    ],
     "ports": [
       "80:80"
     ],
