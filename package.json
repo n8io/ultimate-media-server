@@ -12,7 +12,7 @@
     "docker:reset": "[ -f docker-compose.yml ] && npm run docker:stop && npm run docker:remove || echo \"No docker-compose.yml found\"",
     "docker:start": "docker-compose up -d || true",
     "docker:stop": "docker-compose stop || true",
-    "hosts": "hostile set $(docker-machine ip default) ultimate.media.server",
+    "hosts": "sudo hostile set $(docker-machine ip default) ultimate.media.server",
     "open": "npm run hosts && node open",
     "postinstall": "npm run docker:build",
     "test": "echo 'No tests specified' && exit 0"
