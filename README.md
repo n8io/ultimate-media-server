@@ -10,6 +10,7 @@ A collection of services that stands up all your media automation needs with doc
 ## How easy it?
 
 ### Prequisites
+* All of your media exists in `./media` (restriction of docker)
 * If you are on a Windows/MacOS...
   * Install [Docker (toolbox)](https://www.docker.com/toolbox)
   * Create your default machine
