@@ -1,3 +1,5 @@
+![Ultimate Media Server](ums.jpg)
+
 # ultimate-media-server
 A collection of services that stands up all your media automation needs with docker containers.
 
