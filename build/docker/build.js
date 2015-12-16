@@ -19,6 +19,7 @@ var fileContents;
 var dcObj;
 var plexConfigDir;
 var transcodeConfigDir;
+var hostSvcs;
 var pia = {
 	user: process.env.PIA_USER || '',
 	password: process.env.PIA_PASS || ''
@@ -44,12 +45,21 @@ if (os.platform() === 'linux') {
 }
 
 console.log('Adding extra_hosts for ums dns name...');
-dcObj.sabnzbd['extra_hosts'].push(dockerAddress + ':' + umsName);
-dcObj.sickbeard['extra_hosts'].push(dockerAddress + ':' + umsName);
-dcObj.couchpotato['extra_hosts'].push(dockerAddress + ':' + umsName);
-dcObj.couchpotatoprerelease['extra_hosts'].push(dockerAddress + ':' + umsName);
-dcObj.transmission['extra_hosts'].push(dockerAddress + ':' + umsName);
-dcObj.nginx['extra_hosts'].push(dockerAddress + ':transmission');
+hostSvcs = [
+  'sickbeard',
+  'couchpotato',
+  'couchpotatoprerelease',
+  'nginx',
+  'sabnzbd',
+  'transmission'
+];
+hostSvcs.forEach(function(s) {
+  if (!dcObj[s]['extra_hosts']) {
+    dcObj[s]['extra_hosts'] = [];
+  }
+
+  dcObj[s]['extra_hosts'].push(dockerAddress + ':' + umsName);
+});
 
 if (!pia.user && !pia.password) {
   delete dcObj.transmission;

@@ -33,6 +33,11 @@ A collection of services that stands up all your media automation needs with doc
 ### To stop
 * `npm run docker:stop`
 
+### Want Transmission?
+
+* You need a valid PrivateInternetAccess creds then...
+* `npm run docker PIA_USER=username PIA_PASS=password`
+
 Once the install finishes your browser will automatically open up the following pages:
 
 * [http://ultimate.media.server:8080](http://ultimate.media.server:8080) // Sabnzbd
@@ -40,6 +45,7 @@ Once the install finishes your browser will automatically open up the following 
 * [http://ultimate.media.server:5050](http://ultimate.media.server:5050) // CouchPotato
 * [http://ultimate.media.server:5050](http://ultimate.media.server:5051) // CouchPotato (for prereleases)
 * [http://ultimate.media.server:32400/web](http://ultimate.media.server:32400/web) // Plex Media Server
+* [http://ultimate.media.server:8091](http://ultimate.media.server:8091) // Transmission
 
 ... OR if you are lazy
 * `npm run open`

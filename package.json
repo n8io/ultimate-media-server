@@ -5,14 +5,14 @@
   "main": "app.js",
   "scripts": {
     "clean": "rm -rf node_modules/ && npm run clean:dusting",
-    "clean:dusting": "npm run docker:reset && rm -rf configs/ temp/plex/ temp/transmission/ docker-compose.yml npm-debug.log",
+    "clean:dusting": "npm run docker:reset && rm -rf configs/ temp/plex/ temp/incomplete/sabnzbd temp/incomplete/transmission docker-compose.yml npm-debug.log",
     "docker": "npm run docker:build && npm run docker:stop && npm run docker:start",
     "docker:build": "node ./build/docker/build",
     "docker:remove": "docker-compose rm -f",
     "docker:reset": "[ -f docker-compose.yml ] && npm run docker:stop && npm run docker:remove || echo \"No docker-compose.yml found\"",
     "docker:start": "docker-compose up -d || true",
     "docker:stop": "docker-compose stop || true",
-    "hosts": "sudo hostile set $(docker-machine ip default) ultimate.media.server",
+    "hosts": "hostile set $(docker-machine ip default) ultimate.media.server",
     "open": "npm run hosts && node open",
     "postinstall": "npm run docker:build",
     "test": "echo 'No tests specified' && exit 0"
@@ -29,7 +29,6 @@
   "dependencies": {
     "chalk": "^1.1.1",
     "json2yaml": "^1.0.3",
-    "nginxer": "^0.1.8",
     "shelljs": "^0.5.3"
   },
   "devDependencies": {

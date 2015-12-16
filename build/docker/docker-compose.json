@@ -2,7 +2,7 @@
   "shares": {
     "image": "tianon/true",
     "volumes": [
-      "./media:/data:ro",
+      "./media:/data",
       "./configs:/configs",
       "./temp:/temp"
     ]
@@ -14,7 +14,7 @@
     ],
     "volumes": [
       "./configs/sabnzbd:/config",
-      "./temp/incomplete:/incomplete",
+      "./temp/incomplete/sabnzbd:/incomplete",
       "./temp/tv:/tv",
       "./temp/movies/release:/movies/release",
       "./temp/movies/prerelease:/movies/prerelease"
@@ -113,8 +113,10 @@
       "TRANSMISSION_SPEED_LIMIT_UP=1",
       "TRANSMISSION_SPEED_LIMIT_UP_ENABLED=true",
       "TRANSMISSION_DOWNLOAD_DIR=/tv",
-      "TRANSMISSION_DOWNLOAD_LIMIT=1024",
-      "TRANSMISSION_ALT_SPEED_DOWN=0",
+      "TRANSMISSION_INCOMPLETE_DIR=/incomplete",
+      "TRANSMISSION_INCOMPLETE_DIR_ENABLED=true",
+      "TRANSMISSION_DOWNLOAD_LIMIT=1000",
+      "TRANSMISSION_ALT_SPEED_DOWN=9999999",
       "TRANSMISSION_ALT_SPEED_UP=1",
       "TRANSMISSION_ALT_SPEED_ENABLED=false",
       "TRANSMISSION_ALT_SPEED_TIME_ENABLED=false",
@@ -127,6 +129,7 @@
     ],
     "volumes": [
       "./configs/transmission:/config",
+      "./temp/incomplete/transmission:/incomplete",
       "./temp/tv:/tv",
       "./temp/movies/prerelease:/movies/prerelease",
       "./temp/movies/release:/movies/release"
@@ -143,6 +146,9 @@
   },
   "nginx": {
     "image": "nginx",
+    "links": [
+      "transmission"
+    ],
     "volumes": [
       "./build/docker/nginx.conf:/etc/nginx/nginx.conf:ro"
     ],
