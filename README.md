@@ -33,7 +33,7 @@ A collection of services that stands up all your media automation needs with Doc
 ### To stop
 * `npm run docker:stop`
 
-Once the install finishes your browser will automatically open up the following pages:
+Once the install finishes open your navigate to the following:
 
 * <img src='http://www.google.com/s2/favicons?domain=sabnzbd.org' height='16' width='16' /> [http://ultimate.media.server:8080](http://ultimate.media.server:8080) // Sabnzbd
 * <img src='http://www.google.com/s2/favicons?domain=sickbeard.com' height='16' width='16' /> [http://ultimate.media.server:8081](http://ultimate.media.server:8081) // Sickbeard
