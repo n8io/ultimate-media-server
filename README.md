@@ -1,17 +1,18 @@
 # ultimate-media-server
 A collection of services that stands up all your media automation needs with docker containers.
 
-## What's in the box???
+## What's in the box?!
 * [Sabnzbd](http://sabnzbd.org) (nzb manager)
 * [Sickbeard](http://sickbeard.com) (tv download manager)
 * [CouchPotato](https://couchpota.to) (movie download manager)
 * [Transmission](https://transmissionbt.com) (torrent download manager)
 * [Plex Media Server (plexpass)](https://plex.tv) (media manager)
 
-## How easy it?
+## Getting Started
 
 ### Prequisites
-* All of your media exists in `./media` (restriction of docker)
+* All of your media should exist or be moved to `./media`
+  * It is a restriction of docker to be relative to the docker-compose.yml file
 * You're on a *nix machine (preferably Ubuntu)
   * [Install Docker following these steps](https://docs.docker.com/linux/step_one/)com/linux/step_one/)
   * Make sure docker-compose is installed via:
@@ -23,20 +24,12 @@ A collection of services that stands up all your media automation needs with doc
 
 ### To start
 * `npm run docker`
-* *** PLEASE NOTE *** 
-  * This will take a few minutes depending on your broadband speed on inital startup. 
+* *** PLEASE NOTE ***
+  * This will take a few minutes depending on your broadband speed on inital startup.
   * Starts almost instantly thereafter.
 
 ### To stop
 * `npm run docker:stop`
-
-### I don't see Transmission running?
-
-* You need a valid [PrivateInternetAccess](https://privateinternetaccess.com) creds 
-  * This is needed to properly protect your IP
-  * Pay for the service or you don't get transmission. Sorry :-(
-* Then run 
-  * `PIA_USER=username PIA_PASS=password npm run docker`
 
 Once the install finishes your browser will automatically open up the following pages:
 
@@ -49,3 +42,17 @@ Once the install finishes your browser will automatically open up the following 
 
 ... OR if you are lazy
 * `npm run open`
+
+## Troubleshooting
+
+### I don't see Transmission running?
+
+* You need a valid [PrivateInternetAccess](https://privateinternetaccess.com) creds
+  * This is needed to properly protect your IP
+  * Pay for the service or you don't get transmission. Sorry :-(
+* Then run
+  * `PIA_USER=username PIA_PASS=password npm run docker`
+
+### I don't see Plex running
+
+* Plex Media Server is only supported on *nix OSes. Try running on Debian or Ubuntu.

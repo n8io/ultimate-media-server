@@ -35,7 +35,8 @@
     ],
     "volumes": [
       "./configs/sickbeard:/config",
-      "./temp/tv:/completed"
+      "./temp/tv:/completed",
+      "./media/tv:/tv"
     ],
     "links": [
       "sabnzbd"
@@ -98,6 +99,7 @@
       "shares"
     ],
     "volumes": [
+      "./configs/plex:/config",
       "./temp/plex:/tmp"
     ],
     "ports": [
