@@ -43,7 +43,7 @@ Once the install finishes open your navigate to the following:
 * <img src='http://www.google.com/s2/favicons?domain=transmissionbt.com' height='16' width='16' /> [http://ultimate.media.server:8091](http://ultimate.media.server:8091) // Transmission
 
 ... OR if you are lazy
-* `npm run open`
+* `node open`
 
 ## Troubleshooting
 
