@@ -1,5 +1,5 @@
 var fs = require('fs');
-var path = require('path');
+var cwd = require('cwd');
 var os = require('os');
 var shell = require('shelljs');
 
@@ -8,8 +8,8 @@ var chalk = require('chalk');
 
 var projRoot = process.env.PWD;
 
-var cfgPath = path.join(projRoot, 'build/docker/docker-compose.json');
-var dcPath = path.join(projRoot, 'docker-compose.yml');
+var cfgPath = cwd('build/docker/docker-compose.json');
+var dcPath = cwd('docker-compose.yml');
 
 var regDA = /(:[\d]+)|(tcp:\/\/)/ig;
 var umsName = 'ultimate.media.server';
