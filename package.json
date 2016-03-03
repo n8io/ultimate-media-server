@@ -7,13 +7,12 @@
     "clean": "rm -rf node_modules/ && npm run clean:dusting && rm -rf configs/",
     "clean:dusting": "npm run docker:reset && rm -rf temp/plex/ temp/incomplete/ docker-compose.yml npm-debug.log",
     "docker": "npm run docker:build && npm run docker:stop && npm run docker:start",
-    "docker:build": "node ./build/docker/build",
+    "docker:build": "node build/docker",
     "docker:remove": "docker-compose rm -f",
     "docker:reset": "[ -f docker-compose.yml ] && npm run docker:stop && npm run docker:remove || echo \"No docker-compose.yml found\"",
+    "docker:restart": "npm run docker:stop && npm run docker:start",
     "docker:start": "docker-compose up -d || true",
     "docker:stop": "docker-compose stop || true",
-    "hosts": "sudo hostile set $(docker-machine ip default) ultimate.media.server",
-    "open": "npm run hosts && node open",
     "postinstall": "npm run docker:build",
     "test": "echo 'No tests specified' && exit 0"
   },
@@ -31,9 +30,5 @@
     "cwd": "^0.9.1",
     "json2yaml": "^1.0.3",
     "shelljs": "^0.5.3"
-  },
-  "devDependencies": {
-    "hostile": "^1.0.2",
-    "open": "0.0.5"
   }
 }
