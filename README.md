@@ -4,11 +4,12 @@
 A collection of services that stands up all your media automation needs with Docker containers.
 
 ## What's in the box?!
-* <img src='http://www.google.com/s2/favicons?domain=sabnzbd.org' height='16' width='16' /> [Sabnzbd](http://sabnzbd.org) (nzb manager)
-* <img src='http://www.google.com/s2/favicons?domain=sickbeard.com' height='16' width='16' /> [Sickbeard](http://sickbeard.com) (tv download manager)
-* <img src='http://www.google.com/s2/favicons?domain=sonarr.tv' height='16' width='16' /> [Sonarr](https://sonarr.tv/) (tv download manager)
-* <img src='http://www.google.com/s2/favicons?domain=couchpota.to' height='16' width='16' /> [CouchPotato](https://couchpota.to) (movie download manager)
+* <img src='http://www.google.com/s2/favicons?domain=sabnzbd.org' height='16' width='16' /> [Sabnzbd](http://sabnzbd.org) (usenet download manager)
+* <img src='http://www.google.com/s2/favicons?domain=sickbeard.com' height='16' width='16' /> [Sickbeard](http://sickbeard.com) (tv search & download manager)
+* <img src='http://www.google.com/s2/favicons?domain=sonarr.tv' height='16' width='16' /> [Sonarr](https://sonarr.tv/) (tv search & download manager)
+* <img src='http://www.google.com/s2/favicons?domain=couchpota.to' height='16' width='16' /> [CouchPotato](https://couchpota.to) (movie search & download manager)
 * <img src='http://www.google.com/s2/favicons?domain=transmissionbt.com' height='16' width='16' /> [Transmission](https://transmissionbt.com) (torrent download manager)
+* <img src='https://goo.gl/Qo7Y3z' height='16' width='16' /> [PlexPy](https://goo.gl/zHQveY) (Plex analytics)
 * <img src='http://www.google.com/s2/favicons?domain=plex.tv' height='16' width='16' /> [Plex Media Server (plexpass)](https://plex.tv) (tv & movie organizer and sharing)
 
 ## Getting Started
@@ -42,8 +43,9 @@ Once the install finishes open your navigate to the following:
 * <img src='http://www.google.com/s2/favicons?domain=sonarr.tv' height='16' width='16' /> [http://ultimate.media.server:8989](http://ultimate.media.server:8989) // Sonarr
 * <img src='http://www.google.com/s2/favicons?domain=couchpota.to' height='16' width='16' /> [http://ultimate.media.server:5050](http://ultimate.media.server:5050) // CouchPotato
 * <img src='http://www.google.com/s2/favicons?domain=couchpota.to' height='16' width='16' /> [http://ultimate.media.server:5051](http://ultimate.media.server:5051) // CouchPotato (for prereleases)
-* <img src='http://www.google.com/s2/favicons?domain=plex.tv' height='16' width='16' /> [http://ultimate.media.server:32400/web](http://ultimate.media.server:32400/web) // Plex Media Server
 * <img src='http://www.google.com/s2/favicons?domain=transmissionbt.com' height='16' width='16' /> [http://ultimate.media.server:8091](http://ultimate.media.server:8091) // Transmission
+* <img src='https://goo.gl/Qo7Y3z' height='16' width='16' /> [http://ultimate.media.server:8181](http://ultimate.media.server:8181) // PlexPy
+* <img src='http://www.google.com/s2/favicons?domain=plex.tv' height='16' width='16' /> [http://ultimate.media.server:32400/web](http://ultimate.media.server:32400/web) // Plex Media Server
 
 ### Want Transmission to run with authentication?
 * Add the transmission username and password params and run the command below.
