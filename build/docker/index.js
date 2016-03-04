@@ -26,12 +26,13 @@ if (!pia.user && !pia.password) {
   dcObj.couchpotato.links = dcObj.couchpotato.links.filter((link) => link !== 'transmission');
   dcObj.couchpotatoprerelease.links = dcObj.couchpotatoprerelease.links.filter((link) => link !== 'transmission');
 }
-else if (transmission.user && transmission.pass) {
+else if (transmission.user && transmission.password) {
+  dcObj.transmission.environment.push('TRANSMISSION_RPC_USERNAME=${TRANSMISSION_USER}');
+  dcObj.transmission.environment.push('TRANSMISSION_RPC_PASSWORD=${TRANSMISSION_PASS}');
+  dcObj.transmission.environment.push('TRANSMISSION_RPC_AUTHENTICATION_REQUIRED=true');
+}
+else {
   console.log(chalk.yellow(`Transmission credentials not provided. Transmission auth disabled.`));
-
-  dcObj.transmission.environment.TRANSMISSION_RPC_USERNAME = transmission.user;
-  dcObj.transmission.environment.TRANSMISSION_RPC_PASSWORD = transmission.pass;
-  dcObj.transmission.environment.TRANSMISSION_RPC_AUTHENTICATION_REQUIRED = true;
 }
 
 console.log('Converting to yaml...');
