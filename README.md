@@ -28,7 +28,7 @@ A collection of services that stands up all your media automation needs with Doc
 * `npm install`
 
 ### To start
-* `PIA_USER=username PIA_PASS=password TRANSMISSION_USER=tUsername TRANSMISSION_PASS=tPassword npm run docker`
+* `PIA_USER=username PIA_PASS=password npm run docker`
 * *** PLEASE NOTE ***
   * This will take a few minutes depending on your broadband speed on inital startup.
   * Starts and stops under 10sec thereafter.
