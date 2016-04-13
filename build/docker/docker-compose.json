@@ -10,18 +10,21 @@
     ]
   },
   "sabnzbd": {
-    "image": "timhaak/sabnzbd",
+    "image": "linuxserver/sabnzbd",
     "volumes_from": [
       "shares"
     ],
     "volumes": [
       "./configs/sabnzbd:/config",
-      "./temp/incomplete/sabnzbd:/incomplete",
+      "./temp/downloads/sabnzbd:/downloads",
+      "./temp/incomplete/sabnzbd:/incomplete-downloads",
       "./temp/tv:/tv",
       "./temp/movies/release:/movies/release",
       "./temp/movies/prerelease:/movies/prerelease"
     ],
     "environment": [
+      "PUID=0",
+      "PGID=0",
       "TZ=America/New_York"
     ],
     "ports": [
@@ -75,19 +78,22 @@
     "ports": [
       "8081:8081"
     ],
+    "environment": [
+      "TZ=America/New_York"
+    ],
     "extra_hosts": [
       "0.0.0.0:localhost"
     ],
     "restart": "always"
   },
   "couchpotato": {
-    "image": "timhaak/couchpotato",
+    "image": "linuxserver/couchpotato",
     "volumes_from": [
       "shares"
     ],
     "volumes": [
       "./configs/couchpotato/release:/config",
-      "./configs/couchpotato/release/data:/data",
+      "./configs/couchpotato/release/downloads:/downloads",
       "./temp/movies/release:/completed",
       "./media/movies/release:/movies"
     ],
@@ -99,6 +105,8 @@
       "5050:5050"
     ],
     "environment": [
+      "PUID=0",
+      "PGID=0",
       "TZ=America/New_York"
     ],
     "extra_hosts": [
@@ -107,7 +115,7 @@
     "restart": "always"
   },
   "couchpotatoprerelease": {
-    "image": "timhaak/couchpotato",
+    "image": "linuxserver/couchpotato",
     "volumes_from": [
       "shares"
     ],
@@ -117,7 +125,7 @@
     ],
     "volumes": [
       "./configs/couchpotato/prerelease:/config",
-      "./configs/couchpotato/prerelease/data:/data",
+      "./configs/couchpotato/prerelease/downloads:/downloads",
       "./temp/movies/prerelease:/completed",
       "./media/movies/prerelease:/movies"
     ],
@@ -125,6 +133,8 @@
       "5051:5050"
     ],
     "environment": [
+      "PUID=0",
+      "PGID=0",
       "TZ=America/New_York"
     ],
     "extra_hosts": [
@@ -148,7 +158,8 @@
     "environment": [
       "VERSION=plexpass",
       "PGID=0",
-      "PUID=0"
+      "PUID=0",
+      "TZ=America/New_York"
     ],
     "restart": "always",
     "net": "host"
@@ -167,7 +178,8 @@
     ],
     "environment": [
       "PGID=0",
-      "PUID=0"
+      "PUID=0",
+      "TZ=America/New_York"
     ],
     "restart": "always"
   },
@@ -196,7 +208,8 @@
       "TRANSMISSION_ALT_SPEED_TIME_ENABLED=false",
       "TRANSMISSION_DOWNLOAD_QUEUE_SIZE=50",
       "TRANSMISSION_DOWNLOAD_QUEUE_ENABLED=true",
-      "TRANSMISSION_UPLOAD_SLOTS_PER_TORRENT=1"
+      "TRANSMISSION_UPLOAD_SLOTS_PER_TORRENT=1",
+      "TZ=America/New_York"
     ],
     "extra_hosts": [
       "0.0.0.0:localhost"

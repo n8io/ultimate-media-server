@@ -54,20 +54,20 @@ Once the install finishes open your navigate to the following:
 * Add the transmission username and password params and run the command below.
 * `PIA_USER=username PIA_PASS=password TRANSMISSION_USER=tUsername TRANSMISSION_PASS=tPassword npm run docker`
 
-### I don't see _____ service running
+### _____ web app won't come up or isn't running
 
-* This guide is only supported on *nix OSes. Try running on Debian or Ubuntu.
+* This guide is only supported on *nix OSes. Try running on Ubuntu.
 * Try restarting the services with `npm run docker:restart`
 
 ### TODO
 1. Finish converting every image over to linuxserver images. They're rock solid.
 
 Special thanks to the maintainers of the following docker containers:
-* linuxserver/plex
-* linuxserver/plexpy
-* linuxserver/sonarr
-* timhaak/sabnzbd
-* timhaak/sickbeard
-* timhaak/couchpotato
-* haugene/transmission-openvpn
-* nginx
+* [linuxserver/plex](https://hub.docker.com/r/linuxserver/plex)
+* [linuxserver/plexpy](https://hub.docker.com/r/linuxserver/plexpy)
+* [linuxserver/sonarr](https://hub.docker.com/r/linuxserver/sonarr)
+* [linuxserver/sabnzbd](https://hub.docker.com/r/linuxserver/sabnzbd)
+* [linuxserver/couchpotato](https://hub.docker.com/r/linuxserver/couchpotato)
+* [timhaak/sickbeard](https://hub.docker.com/r/timhaak/sickbeard)
+* [haugene/transmission-openvpn](https://hub.docker.com/r/haugene/transmission-openvpn)
+* [nginx](https://hub.docker.com/_/nginx)
