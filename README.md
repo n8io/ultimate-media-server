@@ -29,12 +29,15 @@ A collection of services that stands up all your media automation needs with Doc
 
 ### To start
 * `PIA_USER=username PIA_PASS=password npm run docker`
-* *** PLEASE NOTE ***
-  * This will take a few minutes depending on your broadband speed on inital startup.
-  * Starts and stops under 10sec thereafter.
+  * Note that this will take a few minutes depending on your broadband speed on inital startup.
+  * Every restart thereafter will be almost instant.
+* Bonus: All containers will automatically restart after power outages
 
 ### To stop
 * `npm run docker:stop`
+
+### To restart (useful for quick auto-updating of apps)
+* `npm run docker:restart`
 
 Once the install finishes open your navigate to the following:
 
