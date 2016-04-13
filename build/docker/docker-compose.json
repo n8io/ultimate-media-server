@@ -133,16 +133,22 @@
     "restart": "always"
   },
   "plex": {
-    "image": "timhaak/plexpass",
+    "image": "linuxserver/plex",
     "volumes_from": [
       "shares"
     ],
     "volumes": [
       "./configs/plex:/config",
-      "./temp/plex:/tmp"
+      "./temp/plex/transcode:/transcode",
+      "./temp/plex/sync:/config/Library/Application Support/Plex Media Server/Cache/Transcode/Sync+"
     ],
     "ports": [
       "32400:32400"
+    ],
+    "environment": [
+      "VERSION=plexpass",
+      "PGID=0",
+      "PUID=0"
     ],
     "restart": "always",
     "net": "host"
