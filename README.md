@@ -58,3 +58,16 @@ Once the install finishes open your navigate to the following:
 
 * This guide is only supported on *nix OSes. Try running on Debian or Ubuntu.
 * Try restarting the services with `npm run docker:restart`
+
+### TODO
+1. Finish converting every image over to linuxserver images. They're rock solid.
+
+Special thanks to the maintainers of the following docker containers:
+* linuxserver/plex
+* linuxserver/plexpy
+* linuxserver/sonarr
+* timhaak/sabnzbd
+* timhaak/sickbeard
+* timhaak/couchpotato
+* haugene/transmission-openvpn
+* nginx
