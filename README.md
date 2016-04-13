@@ -54,7 +54,7 @@ Once the install finishes open your navigate to the following:
 * Add the transmission username and password params and run the command below.
 * `PIA_USER=username PIA_PASS=password TRANSMISSION_USER=tUsername TRANSMISSION_PASS=tPassword npm run docker`
 
-### The <inset service> web app won't come up or isn't running
+### The &lt;insert service&gt; web app won't come up or isn't running
 
 * This guide is only supported on *nix OSes. Try running on Ubuntu.
 * Try restarting the services with `npm run docker:restart`
